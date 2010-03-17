@@ -7,10 +7,10 @@
  *
  */
 
-#import <ThoMoNetworkingFramework/ThoMoClientStub.h>
-#import <ThoMoNetworkingFramework/ThoMoServerStub.h>
-#import <ThoMoNetworkingFramework/ThoMoClientDelegateProtocol.h>
-#import <ThoMoNetworkingFramework/ThoMoServerDelegateProtocol.h>
+#import <ThoMoNetworking/ThoMoClientStub.h>
+#import <ThoMoNetworking/ThoMoServerStub.h>
+#import <ThoMoNetworking/ThoMoClientDelegateProtocol.h>
+#import <ThoMoNetworking/ThoMoServerDelegateProtocol.h>
 
 /// Debugging pList key.
 /**
