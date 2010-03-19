@@ -1,6 +1,6 @@
 /*
  *  ThoMoServerDelegateProtocol.h
- *  PeaceTracker
+ *  ThoMoNetworkingFramework
  *
  *  Created by Thorsten Karrer on 6/8/09.
  *  Copyright 2010 media computing group - RWTH Aachen University.
