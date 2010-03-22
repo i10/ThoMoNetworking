@@ -184,7 +184,13 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 		{
 			NSDate *inOneSecond = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
 			
-			[[NSRunLoop currentRunLoop]	runMode:NSDefaultRunLoopMode beforeDate:inOneSecond];
+			// catch exceptions and propagate to main thread
+			@try {
+				[[NSRunLoop currentRunLoop]	runMode:NSDefaultRunLoopMode beforeDate:inOneSecond];
+			}
+			@catch (NSException * e) {
+				[e performSelectorOnMainThread:@selector(raise) withObject:nil waitUntilDone:YES];
+			}
 			
 			[inOneSecond release];
 		}
