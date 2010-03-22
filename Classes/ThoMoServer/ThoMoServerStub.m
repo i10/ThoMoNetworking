@@ -103,6 +103,7 @@
 {
 	for (NSString *aClientId in [self connectedClients])
 	{
+		// TODO: this might raise an exception - we should take care to catch and probably re-raise to have the data be sent to at least the rest of the connections
 		[self send:theData toClient:aClientId];
 	}
 }
