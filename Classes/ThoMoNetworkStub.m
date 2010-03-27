@@ -149,7 +149,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	NSData *sendData = [theInfoDict objectForKey:@"DATA"];
 	NSString *theConnectionIdString = [theInfoDict objectForKey:@"ID"];
 	
-	ThoMoTCPConnection *connection;
+	ThoMoTCPConnection *connection = nil;
 	@synchronized(self)
 	{
 		connection = [[connections valueForKey:theConnectionIdString] retain];
