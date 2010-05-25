@@ -22,8 +22,6 @@
 		A4B650711070F75D004C8087 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B650731070F769004C8087 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4EABF9611AC035000F8C12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EABF9511AC035000F8C12E /* Foundation.framework */; };
-		A4EAC06A11AC0C2800F8C12E /* ThoMoAvailabilityMacros_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A4EAC06911AC0C2800F8C12E /* ThoMoAvailabilityMacros_private.h */; settings = {ATTRIBUTES = (); }; };
-		A4EAC06C11AC0DC200F8C12E /* ThoMoAvailabilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A4EAC06B11AC0DC200F8C12E /* ThoMoAvailabilityMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +43,6 @@
 		A4B650701070F75D004C8087 /* ThoMoClientStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoClientStub.h; sourceTree = "<group>"; };
 		A4B650721070F769004C8087 /* ThoMoServerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoServerStub.h; sourceTree = "<group>"; };
 		A4EABF9511AC035000F8C12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A4EAC06911AC0C2800F8C12E /* ThoMoAvailabilityMacros_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoAvailabilityMacros_private.h; sourceTree = "<group>"; };
-		A4EAC06B11AC0DC200F8C12E /* ThoMoAvailabilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoAvailabilityMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				A4B6506F1070F678004C8087 /* Public Headers */,
-				A4EAC06911AC0C2800F8C12E /* ThoMoAvailabilityMacros_private.h */,
 				A45F9BEF1067CBFA00FEA464 /* ThoMoNetworkStub.h */,
 				A45F9BF01067CBFA00FEA464 /* ThoMoNetworkStub.m */,
 				A45F9BEB1067CBFA00FEA464 /* ThoMoClient */,
@@ -155,7 +150,6 @@
 				A45F9BF21067CBFA00FEA464 /* ThoMoServerDelegateProtocol.h */,
 				A4B650701070F75D004C8087 /* ThoMoClientStub.h */,
 				A4B650721070F769004C8087 /* ThoMoServerStub.h */,
-				A4EAC06B11AC0DC200F8C12E /* ThoMoAvailabilityMacros.h */,
 			);
 			name = "Public Headers";
 			sourceTree = "<group>";
@@ -177,8 +171,6 @@
 				A4B650711070F75D004C8087 /* ThoMoClientStub.h in Headers */,
 				A4B650731070F769004C8087 /* ThoMoServerStub.h in Headers */,
 				A478F0F1114FC16A0028F5C8 /* ThoMoNetworking.h in Headers */,
-				A4EAC06A11AC0C2800F8C12E /* ThoMoAvailabilityMacros_private.h in Headers */,
-				A4EAC06C11AC0DC200F8C12E /* ThoMoAvailabilityMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +296,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -320,7 +312,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};

@@ -29,9 +29,8 @@
  */
 
 #import "ThoMoClientDelegateProtocol.h"
-#import "ThoMoAvailabilityMacros.h"
 
-@interface ThoMoClientStub : NSObject <NSNetServiceBrowserDelegate>
+@interface ThoMoClientStub : NSObject
 {	
 }
 
