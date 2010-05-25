@@ -348,7 +348,7 @@ static void ServerStubAcceptCallback(CFSocketRef listenSocket, CFSocketCallBackT
 
 - (void)netService:(NSNetService *)sender didNotPublish:(NSDictionary *)errorDict;
 {
-	if([sender isEqualTo:netService])
+	if([sender isEqual:netService])
 	{
 		NSString *userMessage = [NSString stringWithFormat:@"Our Netservice did not publish. Error %@", [errorDict objectForKey:NSNetServicesErrorCode]];
 		
@@ -370,7 +370,7 @@ static void ServerStubAcceptCallback(CFSocketRef listenSocket, CFSocketCallBackT
 
 - (void)netServiceDidStop:(NSNetService *)sender;
 {
-	if([sender isEqualTo:netService])
+	if([sender isEqual:netService])
 	{
 		NSString *userMessage = [NSString stringWithFormat:@"Our Netservice did stop!"];
 		
