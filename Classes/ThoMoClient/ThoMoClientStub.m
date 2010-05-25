@@ -261,7 +261,7 @@
 			break;
 	}
 	
-	NSLog(@"Could not resolve service %@ because of error %d", sender, errorString);
+	NSLog(@"Could not resolve service %@ because of error %@", sender, errorString);
 	
 	// stop the resolve
 	[sender stop];
