@@ -3,5 +3,12 @@
 //
 
 #ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
+    
+	// import foundation classes
+	#import <Foundation/Foundation.h>
+
+	// import our own availability macros in order to compile ThoMoNetworking for 10.5, 10.6, and iPhone OS
+	// this header is also public, such that the framework can also be used under all those conditions
+	#import "ThoMoAvailabilityMacros_private.h"
+
 #endif

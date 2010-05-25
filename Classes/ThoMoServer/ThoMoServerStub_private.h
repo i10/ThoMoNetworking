@@ -6,7 +6,6 @@
 //  Copyright 2009 media computing group - RWTH Aachen University. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ThoMoServerDelegateProtocol.h"
 #import "ThoMoNetworkStub.h"
 

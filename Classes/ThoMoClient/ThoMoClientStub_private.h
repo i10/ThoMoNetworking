@@ -6,15 +6,10 @@
 //  Copyright 2009 media computing group - RWTH Aachen University. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ThoMoClientDelegateProtocol.h"
 #import "ThoMoNetworkStub.h"
 
-#ifdef MAC_OS_X_VERSION_10_6
 @interface ThoMoClientStub : ThoMoNetworkStub <NSNetServiceBrowserDelegate>
-#else
-@interface ThoMoClientStub : ThoMoNetworkStub
-#endif
 {	
 	NSNetServiceBrowser *browser;
 	

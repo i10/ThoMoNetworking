@@ -6,7 +6,6 @@
 //  Copyright 2009 media computing group - RWTH Aachen University. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import "ThoMoTCPConnectionDelegateProtocol.h"
 
 typedef enum ServerStubSubPackets {
@@ -17,11 +16,7 @@ typedef enum ServerStubSubPackets {
 
 @class ThoMoServerStub;
 
-#ifdef MAC_OS_X_VERSION_10_6
 @interface ThoMoTCPConnection : NSObject <NSStreamDelegate>
-#else
-@interface ThoMoTCPConnection : NSObject
-#endif
 {
 	id <ThoMoTCPConnectionDelegateProtocol>		delegate;
 	

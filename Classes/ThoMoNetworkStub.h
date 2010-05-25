@@ -16,11 +16,7 @@
 	Note: the implementation of this class is Bonjour-agnostic and should remain so.
  */
 
-#ifdef MAC_OS_X_VERSION_10_6
 @interface ThoMoNetworkStub : NSObject <ThoMoTCPConnectionDelegateProtocol, NSNetServiceDelegate>
-#else
-@interface ThoMoNetworkStub : NSObject <ThoMoTCPConnectionDelegateProtocol>
-#endif
 {
 	NSMutableDictionary	*connections;
 	NSString			*protocolIdentifier;

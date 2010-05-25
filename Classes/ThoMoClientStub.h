@@ -27,13 +27,11 @@
  *  OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-#import "ThoMoClientDelegateProtocol.h"
 
-#ifdef MAC_OS_X_VERSION_10_6
+#import "ThoMoClientDelegateProtocol.h"
+#import "ThoMoAvailabilityMacros.h"
+
 @interface ThoMoClientStub : NSObject <NSNetServiceBrowserDelegate>
-#else
-@interface ThoMoClientStub : NSObject
-#endif
 {	
 }
 
