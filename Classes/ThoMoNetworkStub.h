@@ -6,7 +6,6 @@
 //  Copyright 2009 media computing group - RWTH Aachen University. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
 #import "ThoMoTCPConnectionDelegateProtocol.h"
 
 

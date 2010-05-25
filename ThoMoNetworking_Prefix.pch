@@ -34,6 +34,9 @@
 
 // iPhone 
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
+
+#define THOMO_NEEDS_NETWORKING_INCLUDES
+
 // pre-4.0
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 40000 // note use of 40000 instead of __IPHONE_4_0
 @protocol NSNetServiceBrowserDelegate <NSObject> @end
