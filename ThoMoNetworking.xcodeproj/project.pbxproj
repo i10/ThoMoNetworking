@@ -76,21 +76,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* ThoMoNetworking */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ThoMoNetworking;
 		};
 		A40F361111AC4690009AAB48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A40F344711AC4061009AAB48 /* ThoMoNetworking-iPhone-Device */;
+			remoteGlobalIDString = A40F344711AC4061009AAB48;
 			remoteInfo = "ThoMoNetworking-iPhone-Device";
 		};
 		A40F361311AC4692009AAB48 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A40F35E811AC44C7009AAB48 /* ThoMoNetworking-iPhone-Simulator */;
+			remoteGlobalIDString = A40F35E811AC44C7009AAB48;
 			remoteInfo = "ThoMoNetworking-iPhone-Simulator";
 		};
 /* End PBXContainerItemProxy section */
@@ -403,7 +403,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# settings\nSKELETON_FRAMEWORK_NAME=ThoMoNetworking\nDEVICE_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphoneos/libThoMoNetworking-iPhone-Device.a\nSIMULATOR_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphonesimulator/libThoMoNetworking-iPhone-Simulator.a\nVERSION=A\n\n# create directory structure\nrm -rf \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\nmkdir \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\ncp -R \"$BUILD_DIR/$CONFIGURATION/$SKELETON_FRAMEWORK_NAME.framework/\" \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/\"\nrm -f \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# replace binary with universal iPhone Device/Simulator library\nlipo -create \\\n -arch armv6 \"$DEVICE_LIB_PATH\" \\\n -arch i386 \"$SIMULATOR_LIB_PATH\" \\\n -o \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# remind the directory change\necho \"Result framework is in: $BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/\"\n";
+			shellScript = "# settings\nSKELETON_FRAMEWORK_NAME=ThoMoNetworking\nDEVICE_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphoneos/libThoMoNetworking-iPhone-Device.a\nSIMULATOR_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphonesimulator/libThoMoNetworking-iPhone-Simulator.a\nVERSION=A\n\n# create directory structure\nrm -rf \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\nmkdir \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\ncp -R \"$BUILD_DIR/$CONFIGURATION/$SKELETON_FRAMEWORK_NAME.framework/\" \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/\"\nrm -f \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# replace binary with universal iPhone Device/Simulator library\nlipo -create \\\n \"$DEVICE_LIB_PATH\" \\\n -arch i386 \"$SIMULATOR_LIB_PATH\" \\\n -o \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# remind the directory change\necho \"Result framework is in: $BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -519,7 +519,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = macosx10.5;
 			};
 			name = Debug;
 		};
@@ -536,7 +536,7 @@
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.2;
+				SDKROOT = macosx10.5;
 			};
 			name = Release;
 		};
