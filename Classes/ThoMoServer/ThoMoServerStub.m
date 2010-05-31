@@ -1,10 +1,33 @@
-//
-//  ServerStub.m
-//  StringDisplayServer
-//
-//  Created by Thorsten Karrer on 29.6.09.
-//  Copyright 2009 media computing group - RWTH Aachen University. All rights reserved.
-//
+/*
+ *  ThoMoServerStub.m
+ *  ThoMoNetworkingFramework
+ *
+ *  Created by Thorsten Karrer on 29.6.09.
+ *  Copyright 2010 media computing group - RWTH Aachen University.
+ *
+ *  Permission is hereby granted, free of charge, to any person
+ *  obtaining a copy of this software and associated documentation
+ *  files (the "Software"), to deal in the Software without
+ *  restriction, including without limitation the rights to use,
+ *  copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the
+ *  Software is furnished to do so, subject to the following
+ *  conditions:
+ *
+ *  The above copyright notice and this permission notice shall be
+ *  included in all copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ *  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ *  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ *  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ *  OTHER DEALINGS IN THE SOFTWARE.
+ *
+ */
+
 
 #import "ThoMoServerStub_private.h"
 #import <sys/socket.h>
@@ -194,33 +217,7 @@ static void ServerStubAcceptCallback(CFSocketRef listenSocket, CFSocketCallBackT
 	NSString *connectionKey = [[[self keyStringFromAddress:addr] retain] autorelease];
 	
 	// now let the superclass create, open, and register a new ThoMoTCPConnection object
-	[super openNewConnection:connectionKey inputStream:istr outputStream:ostr];
-
-	
-	// Tho 05.01.2010: removed. I cannot remember why I ever introduced the support for dupe key strings. It should not happen.
-	/*
-	// create a new ThoMoTCPConnection object, store it, and set ourselves as the delegate to forward the incoming data to our own delegate
-	ThoMoTCPConnection *newConnection = [[ThoMoTCPConnection alloc] initWithDelegate:self inputStream:istr outputStream:ostr];
-	
-	NSMutableString *peerKey = [[[self keyStringFromAddress:addr] mutableCopy] autorelease];
-	
-	NSUInteger peerKeyDupeCount = 2;
-
-	// store in our dictionary, open, and release
-	@synchronized(self)
-	{
-		if([connections valueForKey:peerKey]) {
-			[peerKey appendString:@" (2)"];
-		}
-		while([connections valueForKey:peerKey]) {
-			[peerKey replaceCharactersInRange:NSMakeRange([peerKey length] - 3, 3) withString:[NSString stringWithFormat:@"(%d)", ++peerKeyDupeCount]];
-		}
-		
-		[connections setValue:newConnection forKey:peerKey];
-	}
-	[newConnection open];
-	[newConnection release];
-	 */
+	[super openNewConnection:connectionKey inputStream:istr outputStream:ostr];	
 }
 
 
