@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'OSXUniversal' target in the 'OSXUniversal' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
