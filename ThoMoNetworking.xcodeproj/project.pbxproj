@@ -584,7 +584,7 @@
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphonesimulator5.1;
 			};
 			name = Debug;
 		};
@@ -599,7 +599,7 @@
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
-				SDKROOT = iphonesimulator3.2;
+				SDKROOT = iphonesimulator5.1;
 				ZERO_LINK = NO;
 			};
 			name = Release;
