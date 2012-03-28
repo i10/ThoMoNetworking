@@ -364,6 +364,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ThoMoNetworking" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -475,7 +476,6 @@
 				DYLIB_CURRENT_VERSION = 1.2;
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -520,8 +520,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PREBINDING = NO;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -537,8 +536,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PREBINDING = NO;
-				SDKROOT = macosx10.7;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -553,9 +551,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Device";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -566,13 +563,11 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Device";
-				SDKROOT = iphoneos3.2;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -588,7 +583,6 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
 				SDKROOT = iphonesimulator3.2;
 			};
@@ -601,11 +595,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PREBINDING = NO;
 				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
 				SDKROOT = iphonesimulator3.2;
 				ZERO_LINK = NO;
@@ -627,7 +619,6 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = ThoMoNetworking;
 				ZERO_LINK = NO;
 			};
