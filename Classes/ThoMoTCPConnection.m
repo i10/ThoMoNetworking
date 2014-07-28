@@ -211,7 +211,7 @@
 		[sendObjectsQueue removeLastObject];
 		
 		// create new send buffer
-		uint32_t objectSize = [currentSendObject length];
+		uint32_t objectSize = (uint32_t)[currentSendObject length];
 		uint32_t packetSize = objectSize + HEADERSIZE;
 		sendBuffer = (uint8_t *)malloc(packetSize);
 		
@@ -329,7 +329,7 @@
 				outStreamHasSpaceAvailableEventIgnored = NO;
 				
 				uint32_t	bytesToSend = ((bytesRemainingToSend >= CHUNKSIZE) ? CHUNKSIZE : bytesRemainingToSend);
-				uint32_t	bytesActuallySent = [outStream write:sendBufferCursor maxLength:bytesToSend];
+				uint32_t	bytesActuallySent = (uint32_t)[outStream write:sendBufferCursor maxLength:bytesToSend];
 				
 				bytesRemainingToSend -= bytesActuallySent;
 				
@@ -372,6 +372,12 @@
 			// be careful! the delegate might kill us for the bad news...
 			[delegate streamErrorEncountered:stream onConnection:self];
 		}
+			
+		case NSStreamEventNone:
+		{
+			// do nothing
+		}
+			
 	}
 	
 	threadIsPresentInMethod = NO;

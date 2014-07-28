@@ -42,6 +42,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 
 // interface category for main thread relay methods
 @interface ThoMoNetworkStub (RelayMethods)
+-(void)networkStubDidShutDownRelayMethod;
 -(void)netServiceProblemRelayMethod:(NSDictionary *)infoDict;
 -(void)didReceiveDataRelayMethod:(NSDictionary *)infoDict;
 -(void)connectionEstablishedRelayMethod:(NSDictionary *)infoDict;
@@ -296,7 +297,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	NSString *connectionKey = [self keyForConnection:theConnection];
 	
 	NSError *theError = [theStream streamError];
-	NSString *userMessage = [NSString stringWithFormat:@"Error %i: \"%@\" on stream to %@! Terminating connection.", [theError code], [theError localizedDescription], connectionKey];
+	NSString *userMessage = [NSString stringWithFormat:@"Error %li: \"%@\" on stream to %@! Terminating connection.", (long)[theError code], [theError localizedDescription], connectionKey];
 	
 	[theConnection close];
 	
