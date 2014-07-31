@@ -40,8 +40,6 @@ typedef enum ServerStubSubPackets {
 
 @interface ThoMoTCPConnection : NSObject <NSStreamDelegate>
 {
-	id <ThoMoTCPConnectionDelegateProtocol>		delegate;
-	
 	NSInputStream	*inStream;
 	NSOutputStream	*outStream;
 	
@@ -73,7 +71,7 @@ typedef enum ServerStubSubPackets {
 	BOOL threadIsPresentInMethod;
 }
 
-@property (assign) id <ThoMoTCPConnectionDelegateProtocol>		delegate;
+@property (weak) id <ThoMoTCPConnectionDelegateProtocol>		delegate;
 
 -(id)initWithDelegate:(id <ThoMoTCPConnectionDelegateProtocol>)theDelegate inputStream:(NSInputStream *)theInStream outputStream:(NSOutputStream *)theOutStream;
 

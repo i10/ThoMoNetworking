@@ -71,15 +71,6 @@
 
 @implementation ThoMoClientStub
 
-
-#pragma mark -
-#pragma mark Properties
-
-@synthesize delegate;
-@synthesize offeredNetServices;
-@synthesize connectedNetServices;
-
-
 #pragma mark -
 #pragma mark Housekeeping
 
@@ -88,8 +79,9 @@
 	self = [super initWithProtocolIdentifier:theProtocolIdentifier];
 	if (self != nil) {
 		// add inits here
-		self.offeredNetServices		= [[NSMutableArray alloc] init];
-		self.connectedNetServices	= [[NSMutableDictionary alloc] init];
+		self.offeredNetServices				= [[NSMutableArray alloc] init];
+		self.connectedNetServices			= [[NSMutableDictionary alloc] init];
+		self.currentlyResolvingNetServices	= [[NSMutableArray alloc] init];
 	}
 	return self;
 }
@@ -98,9 +90,6 @@
 - (void) dealloc
 {
 	[self stop];
-	self.offeredNetServices		= nil;
-	self.connectedNetServices	= nil;
-	[super dealloc];
 }
 
 
@@ -162,7 +151,6 @@
 -(void)teardown;
 {
 	[browser stop]; 
-	[browser release]; 
 	browser = nil;
 	
 	[super teardown];
@@ -174,7 +162,7 @@
 {
 	NSData *addr = [[theService addresses] objectAtIndex:0];
 	
-	NSMutableString *peerKey = [[[self keyStringFromAddress:addr] mutableCopy] autorelease];
+	NSMutableString *peerKey = [[self keyStringFromAddress:addr] mutableCopy];
 	
 	return peerKey;
 }
@@ -193,7 +181,7 @@
 	[self.offeredNetServices addObject:service];
 	
 	//resolve net service
-	[service retain]; // retain - will be released after the resolve comes back!
+	[self.currentlyResolvingNetServices addObject:service];
 	[service setDelegate:self];
 	[service resolveWithTimeout:0.0];
 }
@@ -212,12 +200,12 @@
 #pragma mark NSNetServiceDelegate
 
 //notification when netservice was resolved
-- (void)netServiceDidResolveAddress:(NSNetService *)sender
+- (void)netServiceDidResolveAddress:(NSNetService *)resolvedService
 {
-	NSLog(@"Resolved Server Address %@", [sender hostName]);
+	NSLog(@"Resolved Server Address %@", [resolvedService hostName]);
 
 	// get a key string ("ip_address:port") for the service
-	NSString *key = [self keyStringFromResolvedService:sender];
+	NSString *key = [self keyStringFromResolvedService:resolvedService];
 	NSAssert(key != nil, @"Could not create key string for resolved service");
 	
 	// Tho 04.01.10: changed. Connections are only established if the service is not present in the connectedNetServices dict.
@@ -233,26 +221,24 @@
 		// -[NSNetService getInputStream:outputStream:] currently returns the stream 
 		// with a reference that we have to release (something that's counter to the 
 		// standard Cocoa memory management rules <rdar://problem/6868813>).
-		BOOL gotStreams = [sender getInputStream:&istream outputStream:&ostream];
+		// Update: ARC knows about this, so it's all right
+		BOOL gotStreams = [resolvedService getInputStream:&istream outputStream:&ostream];
 		
 		if (gotStreams)
 		{
 			[self openNewConnection:key inputStream:istream outputStream:ostream];
-			[istream release];
-			[ostream release];
-						
-			[self.connectedNetServices setObject:sender forKey:key];
+			[self.connectedNetServices setObject:resolvedService forKey:key];
 		}
 		
 	}
 	
 	// we're done here, stop resolving
-	[sender stop];
-	[sender release];
+	[resolvedService stop];
+	[self.currentlyResolvingNetServices removeObject:resolvedService];
 }
 
 
-- (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict 
+- (void)netService:(NSNetService *)unresolvedService didNotResolve:(NSDictionary *)errorDict 
 {
 	NSString *errorString;
 	switch ([(NSNumber *)[errorDict objectForKey:NSNetServicesErrorCode] intValue])
@@ -283,11 +269,11 @@
 			break;
 	}
 	
-	NSLog(@"Could not resolve service %@ because of error %@", sender, errorString);
+	NSLog(@"Could not resolve service %@ because of error %@", unresolvedService, errorString);
 	
 	// stop the resolve
-	[sender stop];
-	[sender release];
+	[unresolvedService stop];
+	[self.currentlyResolvingNetServices removeObject:unresolvedService];
 }
 
 
@@ -311,13 +297,14 @@
 	[super streamEndEncountered:theStream onConnection:theConnection];
 	
 	// remove the connection's service from the connectedNetServices dict (it may still be contained in the offered array)
-	NSNetService *connectionNetService = [[self.connectedNetServices objectForKey:connectionKey] retain]; // retain - will be released after the resolve comes back!
+	NSNetService *connectionNetService = [self.connectedNetServices objectForKey:connectionKey];
 	[self.connectedNetServices removeObjectForKey:connectionKey];
 	
 	// try to re-resolve the netService if it is still offered by Bonjour
-	if ([offeredNetServices containsObject:connectionNetService])
+	if ([self.offeredNetServices containsObject:connectionNetService])
 	{
 		[self performSelector:@selector(resolveNetService:) withObject:connectionNetService afterDelay:1];
+		[self.currentlyResolvingNetServices addObject:connectionNetService];
 	}	
 }
 
@@ -331,13 +318,14 @@
 	[super streamErrorEncountered:theStream onConnection:theConnection];
 	
 	// remove the connection's service from the connectedNetServices dict (it may still be contained in the offered array)
-	NSNetService *connectionNetService = [[self.connectedNetServices objectForKey:connectionKey] retain]; // retain - will be released after the resolve comes back!
+	NSNetService *connectionNetService = [self.connectedNetServices objectForKey:connectionKey];
 	[self.connectedNetServices removeObjectForKey:connectionKey];
 	
 	// try to re-resolve the netService if it is still offered by Bonjour
-	if ([offeredNetServices containsObject:connectionNetService])
+	if ([self.offeredNetServices containsObject:connectionNetService])
 	{
 		[self performSelector:@selector(resolveNetService:) withObject:connectionNetService afterDelay:1];
+		[self.currentlyResolvingNetServices addObject:connectionNetService];
 	}
 }
 
@@ -355,50 +343,55 @@
 // override
 -(void)netWorkStubDidShutDownRelayMethod
 {
-	if ([delegate respondsToSelector:@selector(clientDidShutDown:)])
-		[delegate clientDidShutDown:self];	
+	if ([self.delegate respondsToSelector:@selector(clientDidShutDown:)]) {
+		[self.delegate clientDidShutDown:self];
+	}
 }
 
 // override
 -(void)netServiceProblemRelayMethod:(NSDictionary *)infoDict
 {
-	if ([delegate respondsToSelector:@selector(netServiceProblemEncountered:onClient:)])
-		[delegate netServiceProblemEncountered:[infoDict objectForKey:@"kThoMoTCPInfoKeyUserMessage"] onClient:self];
+	if ([self.delegate respondsToSelector:@selector(netServiceProblemEncountered:onClient:)]) {
+		[self.delegate netServiceProblemEncountered:[infoDict objectForKey:@"kThoMoTCPInfoKeyUserMessage"] onClient:self];
+	}
 }
 
 // required
 // override
 -(void)didReceiveDataRelayMethod:(NSDictionary *)infoDict;
 {
-	[delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient] 
-	  didReceiveData:[infoDict objectForKey:kThoMoNetworkInfoKeyData] 
-		  fromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]];
+	[self.delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient]
+		   didReceiveData:[infoDict objectForKey:kThoMoNetworkInfoKeyData]
+			   fromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]];
 }
 
 // override
 -(void)connectionEstablishedRelayMethod:(NSDictionary *)infoDict;
 {
-	if ([delegate respondsToSelector:@selector(client:didConnectToServer:)])
-		[delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient] 
-	  didConnectToServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]];
+	if ([self.delegate respondsToSelector:@selector(client:didConnectToServer:)]) {
+		[self.delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient]
+		   didConnectToServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]];
+	}
 }
 
 // override
 -(void)connectionLostRelayMethod:(NSDictionary *)infoDict;
 {
-	if ([delegate respondsToSelector:@selector(client:didDisconnectFromServer:errorMessage:)])
-		[delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient] 
- didDisconnectFromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]
-			errorMessage:[infoDict objectForKey:kThoMoNetworkInfoKeyUserMessage]];
+	if ([self.delegate respondsToSelector:@selector(client:didDisconnectFromServer:errorMessage:)]) {
+		[self.delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient]
+	  didDisconnectFromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]
+				 errorMessage:[infoDict objectForKey:kThoMoNetworkInfoKeyUserMessage]];
+	}
 }
 
 // override
 -(void)connectionClosedRelayMethod:(NSDictionary *)infoDict;
 {
-	if ([delegate respondsToSelector:@selector(client:didDisconnectFromServer:errorMessage:)])
-		[delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient] 
- didDisconnectFromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]
-			errorMessage:[infoDict objectForKey:kThoMoNetworkInfoKeyUserMessage]];
+	if ([self.delegate respondsToSelector:@selector(client:didDisconnectFromServer:errorMessage:)]) {
+		[self.delegate client:[infoDict objectForKey:kThoMoNetworkInfoKeyClient]
+	  didDisconnectFromServer:[infoDict objectForKey:kThoMoNetworkInfoKeyServer]
+				 errorMessage:[infoDict objectForKey:kThoMoNetworkInfoKeyUserMessage]];
+	}
 }
 
 

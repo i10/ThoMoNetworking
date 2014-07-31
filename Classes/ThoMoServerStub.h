@@ -38,7 +38,7 @@
 /**
  Accessor for the server stubs delegate. Must be compliant to ThoMoServerDelegateProtocol.
  */
-@property (assign) id<ThoMoServerDelegateProtocol> delegate;
+@property (weak) id<ThoMoServerDelegateProtocol> delegate;
 
 
 

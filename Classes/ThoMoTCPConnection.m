@@ -35,8 +35,6 @@
 
 @implementation ThoMoTCPConnection
 
-@synthesize delegate;
-
 - (id) init
 {
 	return [self initWithDelegate:nil inputStream:nil outputStream:nil];
@@ -65,15 +63,14 @@
 			currentSendObject						= nil;
 			
 			
-			inStream			= [theInStream retain];
-			outStream			= [theOutStream retain];
-			delegate			= theDelegate; // do not retain the delegate
+			inStream			= theInStream;
+			outStream			= theOutStream;
+			self.delegate		= theDelegate;
 			
 			threadIsPresentInMethod = NO;
 		}
 		else
 		{
-			[self release];
 			self = nil;
 		}
 	}
@@ -84,17 +81,11 @@
 {
 	[self close];
 	
-	[inStream release];
-	[outStream release];
-	
-	[sendObjectsQueue release];
-	
 	free(dataBuffer);
 	
-	if (sendBuffer)
+	if (sendBuffer) {
 		free(sendBuffer);
-	
-	[super dealloc];
+	}
 }
 
 -(void)open;
@@ -131,21 +122,19 @@
 
 -(void)setupKeepalive;
 {
-	keepaliveSendTimer = [[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(sendKeepalive:) userInfo:nil repeats:YES] retain];
+	keepaliveSendTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(sendKeepalive:) userInfo:nil repeats:YES];
 }
 
 -(void)sendKeepalive:(NSTimer *)theTimer;
 {
-	NSData *nullData = [[NSData dataWithBytes:NULL length:0] retain];
+	NSData *nullData = [NSData dataWithBytes:NULL length:0];
 	[self enqueueNextSendObject:nullData];
-	[nullData release];
 }
 
 -(void)teardownKeepalive;
 {
 	if (keepaliveSendTimer) {
 		[keepaliveSendTimer invalidate];
-		[keepaliveSendTimer release];
 		keepaliveSendTimer = nil;
 	}
 }
@@ -175,8 +164,7 @@
 		{
 			// parse data and update status
 			NSData *packetData = [[NSData alloc] initWithBytes:dataBuffer length:(dataBufferCursor - dataBuffer)];
-			[delegate didReceiveData:packetData onConnection:self];
-			[packetData release];
+			[self.delegate didReceiveData:packetData onConnection:self];
 			bytesMissingForNextSubpacket = HEADERSIZE;
 			nextExpectedSubpacket = kServerStubSubPacketHeader;
 			break;
@@ -207,7 +195,7 @@
 	
 	if ([sendObjectsQueue count] > 0)
 	{
-		currentSendObject = [[sendObjectsQueue lastObject] retain];
+		currentSendObject = [sendObjectsQueue lastObject];
 		[sendObjectsQueue removeLastObject];
 		
 		// create new send buffer
@@ -224,7 +212,6 @@
 		bytesRemainingToSend = packetSize;
 		
 		// release the sendObject
-		[currentSendObject release];
 	}
 	
 	// check if we need to re-enable the stream events because we had nothing to send earlier
@@ -266,7 +253,7 @@
 		{
 			if ([inStream streamStatus] == NSStreamStatusOpen && [outStream streamStatus] == NSStreamStatusOpen && !openCallbackSent)
 			{
-				[delegate streamsDidOpenOnConnection:self];
+				[self.delegate streamsDidOpenOnConnection:self];
 				openCallbackSent = YES;
 			}
 			break;
@@ -297,13 +284,13 @@
 				else if ([stream streamStatus] == NSStreamStatusAtEnd)
 				{
 					// be careful! the delegate might kill us for the bad news...
-					[delegate streamEndEncountered:stream onConnection:self];
+					[self.delegate streamEndEncountered:stream onConnection:self];
 					break;
 				}
 				else if ([stream streamStatus] == NSStreamStatusError)
 				{
 					// be careful! the delegate might kill us for the bad news...
-					[delegate streamErrorEncountered:stream onConnection:self];
+					[self.delegate streamErrorEncountered:stream onConnection:self];
 					break;
 				}
 				else
@@ -346,12 +333,12 @@
 				else if ([stream streamStatus] == NSStreamStatusAtEnd)
 				{
 					// be careful! the delegate might kill us for the bad news...
-					[delegate streamEndEncountered:stream onConnection:self];
+					[self.delegate streamEndEncountered:stream onConnection:self];
 				}
 				else if ([stream streamStatus] == NSStreamStatusError || bytesActuallySent == -1)
 				{
 					// be careful! the delegate might kill us for the bad news...
-					[delegate streamErrorEncountered:stream onConnection:self];
+					[self.delegate streamErrorEncountered:stream onConnection:self];
 				}
 				else
 				{
@@ -364,13 +351,13 @@
 		case NSStreamEventEndEncountered:
 		{			
 			// be careful! the delegate might kill us for the bad news...
-			[delegate streamEndEncountered:stream onConnection:self];
+			[self.delegate streamEndEncountered:stream onConnection:self];
 			break;
 		}
 		case NSStreamEventErrorOccurred:
 		{
 			// be careful! the delegate might kill us for the bad news...
-			[delegate streamErrorEncountered:stream onConnection:self];
+			[self.delegate streamErrorEncountered:stream onConnection:self];
 		}
 			
 		case NSStreamEventNone:

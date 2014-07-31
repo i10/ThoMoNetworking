@@ -33,17 +33,13 @@
 
 @interface ThoMoClientStub : ThoMoNetworkStub <NSNetServiceBrowserDelegate>
 {	
-	NSNetServiceBrowser *browser;
-	
-	NSMutableArray		*offeredNetServices;	// offered
-	NSMutableDictionary *connectedNetServices;	// connected
-	
-	id<ThoMoClientDelegateProtocol> delegate; 	
+	NSNetServiceBrowser *browser;	
 }
 
-@property (assign) id<ThoMoClientDelegateProtocol> delegate; 
-@property (retain) NSMutableArray *offeredNetServices;
-@property (retain) NSMutableDictionary *connectedNetServices;
+@property (weak) id<ThoMoClientDelegateProtocol> delegate;
+@property (strong) NSMutableArray *offeredNetServices;
+@property (strong) NSMutableDictionary *connectedNetServices;
+@property (strong) NSMutableArray *currentlyResolvingNetServices;
 
 
 -(NSArray *)connectedServers;
