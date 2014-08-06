@@ -77,7 +77,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 		NSString *scopeSpecifier = [[NSUserDefaults standardUserDefaults] stringForKey:kThoMoNetworkPrefScopeSpecifierKey];
 		if (scopeSpecifier)
 		{
-			protocolIdentifier = [[scopeSpecifier stringByAppendingFormat:@"-%@", theProtocolIdentifier] retain];
+			protocolIdentifier = [scopeSpecifier stringByAppendingFormat:@"-%@", theProtocolIdentifier];
 			NSLog(@"Warning: ThoMo Networking Protocol Prefix in effect! If your app cannot connect to its counterpart that may be the reason.");
 		}
 		else
@@ -103,14 +103,6 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	return [self initWithProtocolIdentifier:@"thoMoNetworkStubDefaultIdentifier"];
 }
 
-// since the networkThread retains our object while it executes, this method will be called after the thread is done
-- (void) dealloc
-{
-	[connections release];
-	[protocolIdentifier release];
-	[networkThread release];
-	[super dealloc];
-}
 
 // these methods are called on the main thread
 #pragma mark Control
@@ -144,7 +136,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	{
 		result = [[connections allKeys] copy];
 	}
-	return [result autorelease];
+	return result;
 }
 
 -(void)send:(id<NSCoding>)theData toConnection:(NSString *)theConnectionIdString;
@@ -174,7 +166,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	ThoMoTCPConnection *connection = nil;
 	@synchronized(self)
 	{
-		connection = [[connections valueForKey:theConnectionIdString] retain];
+		connection = [connections valueForKey:theConnectionIdString];
 	}
 	
 	if (!connection) 
@@ -186,7 +178,6 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 	{		
 		[connection enqueueNextSendObject:sendData];
 	}
-	[connection release];
 }
 
 
@@ -200,31 +191,30 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 		#endif
 	#endif
 	
-	NSAutoreleasePool *networkThreadPool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 	
-	if([self setup])
-	{		
-		while (![networkThread isCancelled])
-		{
-			NSDate *inOneSecond = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
-			
-			// catch exceptions and propagate to main thread
-			@try {
-				[[NSRunLoop currentRunLoop]	runMode:NSDefaultRunLoopMode beforeDate:inOneSecond];
+		if([self setup])
+		{		
+			while (![networkThread isCancelled])
+			{
+				NSDate *inOneSecond = [[NSDate alloc] initWithTimeIntervalSinceNow:1];
+				
+				// catch exceptions and propagate to main thread
+				@try {
+					[[NSRunLoop currentRunLoop]	runMode:NSDefaultRunLoopMode beforeDate:inOneSecond];
+				}
+				@catch (NSException * e) {
+					[e performSelectorOnMainThread:@selector(raise) withObject:nil waitUntilDone:YES];
+				}
+				
 			}
-			@catch (NSException * e) {
-				[e performSelectorOnMainThread:@selector(raise) withObject:nil waitUntilDone:YES];
-			}
 			
-			[inOneSecond release];
+			[self teardown];
 		}
 		
-		[self teardown];
+		[self performSelectorOnMainThread:@selector(networkStubDidShutDownRelayMethod) withObject:nil waitUntilDone:NO];
+	
 	}
-	
-	[self performSelectorOnMainThread:@selector(networkStubDidShutDownRelayMethod) withObject:nil waitUntilDone:NO];
-	
-	[networkThreadPool release];
 }
 
 #pragma mark -
@@ -369,7 +359,7 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 		connectionKey = [[keys objectAtIndex:0] copy];
 	}
 	
-	return [connectionKey autorelease];
+	return connectionKey;
 }
 
 
@@ -387,7 +377,6 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 		[connections setValue:newConnection forKey:theConnectionKey];
 	}
 	[newConnection open];
-	[newConnection release];
 }
 
 @end

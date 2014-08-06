@@ -38,7 +38,7 @@
 /**
  Accessor for the client stubs delegate. Must be compliant to ThoMoClientDelegateProtocol.
  */
-@property (assign) id<ThoMoClientDelegateProtocol> delegate; 
+@property (weak) id<ThoMoClientDelegateProtocol> delegate;
 
 
 /// Designated initializer

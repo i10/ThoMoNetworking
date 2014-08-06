@@ -6,54 +6,7 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		A40F360C11AC4680009AAB48 /* ThoMoNetworking (All) */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = A40F362011AC46B5009AAB48 /* Build configuration list for PBXAggregateTarget "ThoMoNetworking (All)" */;
-			buildPhases = (
-				A40F361611AC46AD009AAB48 /* ShellScript */,
-			);
-			dependencies = (
-				A40F361211AC4690009AAB48 /* PBXTargetDependency */,
-				A40F361411AC4692009AAB48 /* PBXTargetDependency */,
-				A40F361011AC468C009AAB48 /* PBXTargetDependency */,
-			);
-			name = "ThoMoNetworking (All)";
-			productName = "ThoMoNetworking (All)";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		A40F344C11AC40CB009AAB48 /* ThoMoClientDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEC1067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h */; };
-		A40F344D11AC40CB009AAB48 /* ThoMoClientStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BED1067CBFA00FEA464 /* ThoMoClientStub_private.h */; };
-		A40F344E11AC40CB009AAB48 /* ThoMoNetworkStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEF1067CBFA00FEA464 /* ThoMoNetworkStub.h */; };
-		A40F344F11AC40CB009AAB48 /* ThoMoServerDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF21067CBFA00FEA464 /* ThoMoServerDelegateProtocol.h */; };
-		A40F345011AC40CB009AAB48 /* ThoMoServerStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF31067CBFA00FEA464 /* ThoMoServerStub_private.h */; };
-		A40F345111AC40CB009AAB48 /* ThoMoTCPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF51067CBFA00FEA464 /* ThoMoTCPConnection.h */; };
-		A40F345211AC40CB009AAB48 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF71067CBFA00FEA464 /* ThoMoTCPConnectionDelegateProtocol.h */; };
-		A40F345311AC40CB009AAB48 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; };
-		A40F345411AC40CB009AAB48 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; };
-		A40F345511AC40CB009AAB48 /* ThoMoNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A478F0F0114FC16A0028F5C8 /* ThoMoNetworking.h */; };
-		A40F345611AC40D3009AAB48 /* ThoMoClientStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BEE1067CBFA00FEA464 /* ThoMoClientStub.m */; };
-		A40F345711AC40D3009AAB48 /* ThoMoNetworkStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF01067CBFA00FEA464 /* ThoMoNetworkStub.m */; };
-		A40F345811AC40D3009AAB48 /* ThoMoServerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF41067CBFA00FEA464 /* ThoMoServerStub.m */; };
-		A40F345911AC40D3009AAB48 /* ThoMoTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF61067CBFA00FEA464 /* ThoMoTCPConnection.m */; };
-		A40F345B11AC40E6009AAB48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F345A11AC40E6009AAB48 /* Foundation.framework */; };
-		A40F35EA11AC44C7009AAB48 /* ThoMoClientDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEC1067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h */; };
-		A40F35EB11AC44C7009AAB48 /* ThoMoClientStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BED1067CBFA00FEA464 /* ThoMoClientStub_private.h */; };
-		A40F35EC11AC44C7009AAB48 /* ThoMoNetworkStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEF1067CBFA00FEA464 /* ThoMoNetworkStub.h */; };
-		A40F35ED11AC44C7009AAB48 /* ThoMoServerDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF21067CBFA00FEA464 /* ThoMoServerDelegateProtocol.h */; };
-		A40F35EE11AC44C7009AAB48 /* ThoMoServerStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF31067CBFA00FEA464 /* ThoMoServerStub_private.h */; };
-		A40F35EF11AC44C7009AAB48 /* ThoMoTCPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF51067CBFA00FEA464 /* ThoMoTCPConnection.h */; };
-		A40F35F011AC44C7009AAB48 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF71067CBFA00FEA464 /* ThoMoTCPConnectionDelegateProtocol.h */; };
-		A40F35F111AC44C7009AAB48 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; };
-		A40F35F211AC44C7009AAB48 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; };
-		A40F35F311AC44C7009AAB48 /* ThoMoNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A478F0F0114FC16A0028F5C8 /* ThoMoNetworking.h */; };
-		A40F35F511AC44C7009AAB48 /* ThoMoClientStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BEE1067CBFA00FEA464 /* ThoMoClientStub.m */; };
-		A40F35F611AC44C7009AAB48 /* ThoMoNetworkStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF01067CBFA00FEA464 /* ThoMoNetworkStub.m */; };
-		A40F35F711AC44C7009AAB48 /* ThoMoServerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF41067CBFA00FEA464 /* ThoMoServerStub.m */; };
-		A40F35F811AC44C7009AAB48 /* ThoMoTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF61067CBFA00FEA464 /* ThoMoTCPConnection.m */; };
-		A40F35FA11AC44C7009AAB48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40F345A11AC40E6009AAB48 /* Foundation.framework */; };
 		A45F9BF81067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEC1067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A45F9BF91067CBFA00FEA464 /* ThoMoClientStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BED1067CBFA00FEA464 /* ThoMoClientStub_private.h */; settings = {ATTRIBUTES = (); }; };
 		A45F9BFA1067CBFA00FEA464 /* ThoMoClientStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BEE1067CBFA00FEA464 /* ThoMoClientStub.m */; };
@@ -69,39 +22,14 @@
 		A4B650711070F75D004C8087 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B650731070F769004C8087 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4EABF9611AC035000F8C12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EABF9511AC035000F8C12E /* Foundation.framework */; };
+		CD9DF3FE19927196007DB9F3 /* ThoMoNetworking_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A40F360F11AC468C009AAB48 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = ThoMoNetworking;
-		};
-		A40F361111AC4690009AAB48 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A40F344711AC4061009AAB48;
-			remoteInfo = "ThoMoNetworking-iPhone-Device";
-		};
-		A40F361311AC4692009AAB48 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A40F35E811AC44C7009AAB48;
-			remoteInfo = "ThoMoNetworking-iPhone-Simulator";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		32DBCF5E0370ADEE00C91783 /* ThoMoNetworking_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoNetworking_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* ThoMoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThoMoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A40F344811AC4061009AAB48 /* libThoMoNetworking-iPhone-Device.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libThoMoNetworking-iPhone-Device.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40F345A11AC40E6009AAB48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		A40F35FE11AC44C7009AAB48 /* libThoMoNetworking-iPhone-Simulator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libThoMoNetworking-iPhone-Simulator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45F9BEC1067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThoMoClientDelegateProtocol.h; path = ThoMoClient/ThoMoClientDelegateProtocol.h; sourceTree = "<group>"; };
 		A45F9BED1067CBFA00FEA464 /* ThoMoClientStub_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoClientStub_private.h; sourceTree = "<group>"; };
 		A45F9BEE1067CBFA00FEA464 /* ThoMoClientStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThoMoClientStub.m; sourceTree = "<group>"; };
@@ -117,6 +45,9 @@
 		A4B650701070F75D004C8087 /* ThoMoClientStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoClientStub.h; sourceTree = "<group>"; };
 		A4B650721070F769004C8087 /* ThoMoServerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoServerStub.h; sourceTree = "<group>"; };
 		A4EABF9511AC035000F8C12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CD9DF3F919927196007DB9F3 /* ThoMoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThoMoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD9DF3FC19927196007DB9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThoMoNetworking_iOS.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,19 +59,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A40F344611AC4061009AAB48 /* Frameworks */ = {
+		CD9DF3F519927196007DB9F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40F345B11AC40E6009AAB48 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A40F35F911AC44C7009AAB48 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A40F35FA11AC44C7009AAB48 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC2EF5B0486A6940098B216 /* ThoMoNetworking.framework */,
-				A40F344811AC4061009AAB48 /* libThoMoNetworking-iPhone-Device.a */,
-				A40F35FE11AC44C7009AAB48 /* libThoMoNetworking-iPhone-Simulator.a */,
+				CD9DF3F919927196007DB9F3 /* ThoMoNetworking.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +85,7 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				CD9DF3FA19927196007DB9F3 /* ThoMoNetworking_iOS */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = ThoMoNetworkingFramework;
@@ -247,6 +169,23 @@
 			name = "Public Headers";
 			sourceTree = "<group>";
 		};
+		CD9DF3FA19927196007DB9F3 /* ThoMoNetworking_iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */,
+				CD9DF3FB19927196007DB9F3 /* Supporting Files */,
+			);
+			path = ThoMoNetworking_iOS;
+			sourceTree = "<group>";
+		};
+		CD9DF3FB19927196007DB9F3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD9DF3FC19927196007DB9F3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -267,37 +206,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A40F344411AC4061009AAB48 /* Headers */ = {
+		CD9DF3F619927196007DB9F3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40F344C11AC40CB009AAB48 /* ThoMoClientDelegateProtocol.h in Headers */,
-				A40F344D11AC40CB009AAB48 /* ThoMoClientStub_private.h in Headers */,
-				A40F344E11AC40CB009AAB48 /* ThoMoNetworkStub.h in Headers */,
-				A40F344F11AC40CB009AAB48 /* ThoMoServerDelegateProtocol.h in Headers */,
-				A40F345011AC40CB009AAB48 /* ThoMoServerStub_private.h in Headers */,
-				A40F345111AC40CB009AAB48 /* ThoMoTCPConnection.h in Headers */,
-				A40F345211AC40CB009AAB48 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */,
-				A40F345311AC40CB009AAB48 /* ThoMoClientStub.h in Headers */,
-				A40F345411AC40CB009AAB48 /* ThoMoServerStub.h in Headers */,
-				A40F345511AC40CB009AAB48 /* ThoMoNetworking.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A40F35E911AC44C7009AAB48 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A40F35EA11AC44C7009AAB48 /* ThoMoClientDelegateProtocol.h in Headers */,
-				A40F35EB11AC44C7009AAB48 /* ThoMoClientStub_private.h in Headers */,
-				A40F35EC11AC44C7009AAB48 /* ThoMoNetworkStub.h in Headers */,
-				A40F35ED11AC44C7009AAB48 /* ThoMoServerDelegateProtocol.h in Headers */,
-				A40F35EE11AC44C7009AAB48 /* ThoMoServerStub_private.h in Headers */,
-				A40F35EF11AC44C7009AAB48 /* ThoMoTCPConnection.h in Headers */,
-				A40F35F011AC44C7009AAB48 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */,
-				A40F35F111AC44C7009AAB48 /* ThoMoClientStub.h in Headers */,
-				A40F35F211AC44C7009AAB48 /* ThoMoServerStub.h in Headers */,
-				A40F35F311AC44C7009AAB48 /* ThoMoNetworking.h in Headers */,
+				CD9DF3FE19927196007DB9F3 /* ThoMoNetworking_iOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,39 +236,23 @@
 			productReference = 8DC2EF5B0486A6940098B216 /* ThoMoNetworking.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A40F344711AC4061009AAB48 /* ThoMoNetworking-iPhone-Device */ = {
+		CD9DF3F819927196007DB9F3 /* ThoMoNetworking_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A40F344B11AC40BE009AAB48 /* Build configuration list for PBXNativeTarget "ThoMoNetworking-iPhone-Device" */;
+			buildConfigurationList = CD9DF40D19927196007DB9F3 /* Build configuration list for PBXNativeTarget "ThoMoNetworking_iOS" */;
 			buildPhases = (
-				A40F344411AC4061009AAB48 /* Headers */,
-				A40F344511AC4061009AAB48 /* Sources */,
-				A40F344611AC4061009AAB48 /* Frameworks */,
+				CD9DF3F419927196007DB9F3 /* Sources */,
+				CD9DF3F519927196007DB9F3 /* Frameworks */,
+				CD9DF3F619927196007DB9F3 /* Headers */,
+				CD9DF3F719927196007DB9F3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ThoMoNetworking-iPhone-Device";
-			productName = "ThoMoNetworking-iPhone-Device";
-			productReference = A40F344811AC4061009AAB48 /* libThoMoNetworking-iPhone-Device.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A40F35E811AC44C7009AAB48 /* ThoMoNetworking-iPhone-Simulator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A40F35FB11AC44C7009AAB48 /* Build configuration list for PBXNativeTarget "ThoMoNetworking-iPhone-Simulator" */;
-			buildPhases = (
-				A40F35E911AC44C7009AAB48 /* Headers */,
-				A40F35F411AC44C7009AAB48 /* Sources */,
-				A40F35F911AC44C7009AAB48 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ThoMoNetworking-iPhone-Simulator";
-			productName = "ThoMoNetworking-iPhone-Device";
-			productReference = A40F35FE11AC44C7009AAB48 /* libThoMoNetworking-iPhone-Simulator.a */;
-			productType = "com.apple.product-type.library.static";
+			name = ThoMoNetworking_iOS;
+			productName = ThoMoNetworking_iOS;
+			productReference = CD9DF3F919927196007DB9F3 /* ThoMoNetworking.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -365,6 +262,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0600;
+				TargetAttributes = {
+					CD9DF3F819927196007DB9F3 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "ThoMoNetworking" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -379,9 +281,7 @@
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* ThoMoNetworking */,
-				A40F344711AC4061009AAB48 /* ThoMoNetworking-iPhone-Device */,
-				A40F35E811AC44C7009AAB48 /* ThoMoNetworking-iPhone-Simulator */,
-				A40F360C11AC4680009AAB48 /* ThoMoNetworking (All) */,
+				CD9DF3F819927196007DB9F3 /* ThoMoNetworking_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -394,23 +294,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A40F361611AC46AD009AAB48 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+		CD9DF3F719927196007DB9F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# settings\nSKELETON_FRAMEWORK_NAME=ThoMoNetworking\nDEVICE_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphoneos/libThoMoNetworking-iPhone-Device.a\nSIMULATOR_LIB_PATH=$BUILD_DIR/$CONFIGURATION-iphonesimulator/libThoMoNetworking-iPhone-Simulator.a\nVERSION=A\n\n# create directory structure\nrm -rf \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\nmkdir \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/\"\ncp -R \"$BUILD_DIR/$CONFIGURATION/$SKELETON_FRAMEWORK_NAME.framework/\" \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/\"\nrm -f \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# replace binary with universal iPhone Device/Simulator library\nlipo -create \\\n \"$DEVICE_LIB_PATH\" \\\n -arch i386 \"$SIMULATOR_LIB_PATH\" \\\n -o \"$BUILD_DIR/$CONFIGURATION/iPhoneFramework/$SKELETON_FRAMEWORK_NAME.framework/Versions/Current/$SKELETON_FRAMEWORK_NAME\"\n\n# remind the directory change\necho \"Result framework is in: $BUILD_DIR/$CONFIGURATION/iPhoneFramework/$PRODUCT_NAME.framework/\"\n";
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DC2EF540486A6940098B216 /* Sources */ = {
@@ -424,53 +315,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A40F344511AC4061009AAB48 /* Sources */ = {
+		CD9DF3F419927196007DB9F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40F345611AC40D3009AAB48 /* ThoMoClientStub.m in Sources */,
-				A40F345711AC40D3009AAB48 /* ThoMoNetworkStub.m in Sources */,
-				A40F345811AC40D3009AAB48 /* ThoMoServerStub.m in Sources */,
-				A40F345911AC40D3009AAB48 /* ThoMoTCPConnection.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A40F35F411AC44C7009AAB48 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A40F35F511AC44C7009AAB48 /* ThoMoClientStub.m in Sources */,
-				A40F35F611AC44C7009AAB48 /* ThoMoNetworkStub.m in Sources */,
-				A40F35F711AC44C7009AAB48 /* ThoMoServerStub.m in Sources */,
-				A40F35F811AC44C7009AAB48 /* ThoMoTCPConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A40F361011AC468C009AAB48 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* ThoMoNetworking */;
-			targetProxy = A40F360F11AC468C009AAB48 /* PBXContainerItemProxy */;
-		};
-		A40F361211AC4690009AAB48 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A40F344711AC4061009AAB48 /* ThoMoNetworking-iPhone-Device */;
-			targetProxy = A40F361111AC4690009AAB48 /* PBXContainerItemProxy */;
-		};
-		A40F361411AC4692009AAB48 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A40F35E811AC44C7009AAB48 /* ThoMoNetworking-iPhone-Simulator */;
-			targetProxy = A40F361311AC4692009AAB48 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB91AE08733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -483,6 +342,7 @@
 				GCC_PREFIX_HEADER = ThoMoNetworking_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = ThoMoNetworking;
 				WRAPPER_EXTENSION = framework;
@@ -493,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -503,6 +364,7 @@
 				GCC_PREFIX_HEADER = ThoMoNetworking_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = ThoMoNetworking;
 				WRAPPER_EXTENSION = framework;
@@ -512,6 +374,7 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -541,6 +404,7 @@
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -566,85 +430,75 @@
 			};
 			name = Release;
 		};
-		A40F344911AC4062009AAB48 /* Debug */ = {
+		CD9DF40919927196007DB9F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_VERSION = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = "ThoMoNetworking-iPhone-Device";
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		A40F344A11AC4062009AAB48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_VERSION = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = "ThoMoNetworking-iPhone-Device";
-				SDKROOT = iphoneos;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		A40F35FC11AC44C7009AAB48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_VERSION = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
-				SDKROOT = iphonesimulator5.1;
-			};
-			name = Debug;
-		};
-		A40F35FD11AC44C7009AAB48 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_VERSION = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = "ThoMoNetworking-iPhone-Simulator";
-				SDKROOT = iphonesimulator5.1;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		A40F360D11AC4681009AAB48 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ThoMoNetworking_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = ThoMoNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		A40F360E11AC4681009AAB48 /* Release */ = {
+		CD9DF40A19927196007DB9F3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ThoMoNetworking_iOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = ThoMoNetworking;
-				ZERO_LINK = NO;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -669,32 +523,13 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A40F344B11AC40BE009AAB48 /* Build configuration list for PBXNativeTarget "ThoMoNetworking-iPhone-Device" */ = {
+		CD9DF40D19927196007DB9F3 /* Build configuration list for PBXNativeTarget "ThoMoNetworking_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A40F344911AC4062009AAB48 /* Debug */,
-				A40F344A11AC4062009AAB48 /* Release */,
+				CD9DF40919927196007DB9F3 /* Debug */,
+				CD9DF40A19927196007DB9F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A40F35FB11AC44C7009AAB48 /* Build configuration list for PBXNativeTarget "ThoMoNetworking-iPhone-Simulator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A40F35FC11AC44C7009AAB48 /* Debug */,
-				A40F35FD11AC44C7009AAB48 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A40F362011AC46B5009AAB48 /* Build configuration list for PBXAggregateTarget "ThoMoNetworking (All)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A40F360D11AC4681009AAB48 /* Debug */,
-				A40F360E11AC4681009AAB48 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

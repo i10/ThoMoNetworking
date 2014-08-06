@@ -31,17 +31,12 @@
 #import "ThoMoServerDelegateProtocol.h"
 #import "ThoMoNetworkStub.h"
 
-@interface ThoMoServerStub : ThoMoNetworkStub {
-	
-	id<ThoMoServerDelegateProtocol> delegate; 
-	
-	uint16_t			listenPort;
+@interface ThoMoServerStub : ThoMoNetworkStub
+{
 	CFSocketRef			listenSocket;
-	NSNetService		*netService;
-	
 }
 
-@property (assign) id<ThoMoServerDelegateProtocol> delegate;
+@property (weak) id<ThoMoServerDelegateProtocol> delegate;
 
 -(NSArray *)connectedClients;
 
