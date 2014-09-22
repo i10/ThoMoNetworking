@@ -22,7 +22,20 @@
 		A4B650711070F75D004C8087 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4B650731070F769004C8087 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A4EABF9611AC035000F8C12E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EABF9511AC035000F8C12E /* Foundation.framework */; };
-		CD9DF3FE19927196007DB9F3 /* ThoMoNetworking_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3910DE19C9A1AB00811166 /* ThoMoNetworkStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEF1067CBFA00FEA464 /* ThoMoNetworkStub.h */; };
+		CD3910DF19C9A1AB00811166 /* ThoMoClientStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BED1067CBFA00FEA464 /* ThoMoClientStub_private.h */; };
+		CD3910E019C9A1AB00811166 /* ThoMoServerStub_private.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF31067CBFA00FEA464 /* ThoMoServerStub_private.h */; };
+		CD3910E119C9A1AB00811166 /* ThoMoTCPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF51067CBFA00FEA464 /* ThoMoTCPConnection.h */; };
+		CD3910E219C9A1AB00811166 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF71067CBFA00FEA464 /* ThoMoTCPConnectionDelegateProtocol.h */; };
+		CD3910E319C9A1B100811166 /* ThoMoNetworkStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF01067CBFA00FEA464 /* ThoMoNetworkStub.m */; };
+		CD3910E419C9A1B100811166 /* ThoMoClientStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BEE1067CBFA00FEA464 /* ThoMoClientStub.m */; };
+		CD3910E519C9A1B100811166 /* ThoMoServerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF41067CBFA00FEA464 /* ThoMoServerStub.m */; };
+		CD3910E619C9A1B100811166 /* ThoMoTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A45F9BF61067CBFA00FEA464 /* ThoMoTCPConnection.m */; };
+		CD3910E719C9A1B800811166 /* ThoMoNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A478F0F0114FC16A0028F5C8 /* ThoMoNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3910E819C9A1B800811166 /* ThoMoClientDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BEC1067CBFA00FEA464 /* ThoMoClientDelegateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3910E919C9A1B800811166 /* ThoMoServerDelegateProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = A45F9BF21067CBFA00FEA464 /* ThoMoServerDelegateProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3910EA19C9A1B800811166 /* ThoMoClientStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650701070F75D004C8087 /* ThoMoClientStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD3910EB19C9A1B800811166 /* ThoMoServerStub.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B650721070F769004C8087 /* ThoMoServerStub.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +59,6 @@
 		A4B650721070F769004C8087 /* ThoMoServerStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThoMoServerStub.h; sourceTree = "<group>"; };
 		A4EABF9511AC035000F8C12E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CD9DF3F919927196007DB9F3 /* ThoMoNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThoMoNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD9DF3FC19927196007DB9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThoMoNetworking_iOS.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +96,6 @@
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
-				CD9DF3FA19927196007DB9F3 /* ThoMoNetworking_iOS */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = ThoMoNetworkingFramework;
@@ -169,23 +179,6 @@
 			name = "Public Headers";
 			sourceTree = "<group>";
 		};
-		CD9DF3FA19927196007DB9F3 /* ThoMoNetworking_iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CD9DF3FD19927196007DB9F3 /* ThoMoNetworking_iOS.h */,
-				CD9DF3FB19927196007DB9F3 /* Supporting Files */,
-			);
-			path = ThoMoNetworking_iOS;
-			sourceTree = "<group>";
-		};
-		CD9DF3FB19927196007DB9F3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CD9DF3FC19927196007DB9F3 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -210,7 +203,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD9DF3FE19927196007DB9F3 /* ThoMoNetworking_iOS.h in Headers */,
+				CD3910EB19C9A1B800811166 /* ThoMoServerStub.h in Headers */,
+				CD3910E119C9A1AB00811166 /* ThoMoTCPConnection.h in Headers */,
+				CD3910E919C9A1B800811166 /* ThoMoServerDelegateProtocol.h in Headers */,
+				CD3910DF19C9A1AB00811166 /* ThoMoClientStub_private.h in Headers */,
+				CD3910E719C9A1B800811166 /* ThoMoNetworking.h in Headers */,
+				CD3910E019C9A1AB00811166 /* ThoMoServerStub_private.h in Headers */,
+				CD3910E219C9A1AB00811166 /* ThoMoTCPConnectionDelegateProtocol.h in Headers */,
+				CD3910EA19C9A1B800811166 /* ThoMoClientStub.h in Headers */,
+				CD3910E819C9A1B800811166 /* ThoMoClientDelegateProtocol.h in Headers */,
+				CD3910DE19C9A1AB00811166 /* ThoMoNetworkStub.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD3910E419C9A1B100811166 /* ThoMoClientStub.m in Sources */,
+				CD3910E619C9A1B100811166 /* ThoMoTCPConnection.m in Sources */,
+				CD3910E519C9A1B100811166 /* ThoMoServerStub.m in Sources */,
+				CD3910E319C9A1B100811166 /* ThoMoNetworkStub.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,10 +445,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -451,7 +458,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ThoMoNetworking_iOS/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -474,17 +481,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ThoMoNetworking_iOS/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -559,17 +567,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = ThoMoNetworking_iOS/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

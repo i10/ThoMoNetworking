@@ -31,7 +31,6 @@
 @class ThoMoClientStub;
 
 
-
 @protocol ThoMoClientDelegateProtocol <NSObject>
 
 @optional
