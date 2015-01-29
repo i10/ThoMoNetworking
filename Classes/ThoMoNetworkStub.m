@@ -185,11 +185,12 @@ NSString *const kThoMoNetworkPrefScopeSpecifierKey				= @"kThoMoNetworkPrefScope
 
 -(void)networkThreadEntry
 {
-	#ifdef DEBUG
+	#ifndef NDEBUG
 		#ifdef THOMO_PTHREAD_NAMING_AVAILABLE
 			pthread_setname_np("ThoMoNetworking Dispatch Thread");
 		#endif
 	#endif
+	
 	
 	@autoreleasepool {
 	
